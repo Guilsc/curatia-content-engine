@@ -1,48 +1,37 @@
-# Curatia Content Engine Web Application
+# Curatia Web Application
 
-This directory contains the Next.js implementation of Curatia, including the Trend Radar foundation.
+This directory contains the Next.js application for Curatia, including Trend Radar, workspace onboarding, settings, and the current Supabase Auth session flow.
 
-## Important status
+## Status
 
-**This is not the current production UI.**
+Curatia is moving incrementally toward its portable production runtime. For the current deployment status and operating model, refer to the [repository README](../README.md) and [current-state notes](../docs/CURRENT-STATE.md).
 
-The current production UI is the ChatGPT Site at:
+Do not assume that every Alpha capability described in the architecture baseline is already implemented.
 
-`https://curatia-content-engine.guilhermecosta.tech/`
+## Authentication
 
-The implementation in this folder is retained as:
-- recovery/fallback code
-- portability insurance
-- the portable production implementation of Curatia
+The current application uses Supabase Auth for sign-in, sign-up, and sign-out. Server-side sessions are resolved with Supabase SSR cookies; workspace membership and roles are checked before protected operations.
 
-Do not deploy this application merely because it exists. Deployment requires an explicit architecture decision.
+The former personal access-key login description is no longer applicable to the current application code.
 
-## Implemented scope
+## Environment configuration
 
-The fallback application:
-- reads `New`, `Watch`, and `Explore` Signals from Supabase
-- renders canonical linked Sources
-- persists Trend Radar state changes server-side
-- never exposes the Supabase secret key to browser code
-- does not create Ideas/Candidates automatically
-- has a private access-key authentication flow
-- successfully completed a GitHub Actions production build
+See [`.env.example`](.env.example) for historical configuration examples, but do not treat `APP_ACCESS_KEY` as the current login mechanism.
 
-## Environment variables if fallback deployment is ever needed
+The current authentication and server-side data clients reference these environment variables:
 
-```
+```dotenv
+NEXT_PUBLIC_SUPABASE_URL=https://YOUR_PROJECT_REF.supabase.co
+NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY=your-publishable-key
 SUPABASE_URL=https://YOUR_PROJECT_REF.supabase.co
-SUPABASE_SECRET_KEY=sb_secret_...
-APP_ACCESS_KEY=use-a-long-random-personal-access-key
+SUPABASE_SECRET_KEY=your-server-side-secret-key
 ```
 
-Never commit real secrets.
+Keep `SUPABASE_SECRET_KEY` server-side only. Never commit real credentials. Configure production values in the deployment platform's secret settings.
 
 ## Architecture
 
-- GitHub = portable source/configuration/recovery
-- Supabase = canonical live application data
-- ChatGPT Project = operational AI/editorial workspace
-- ChatGPT Site = current production UI
-- Scheduled Tasks = background workers
-- this Next.js app = fallback runtime
+- GitHub: portable application code and operational documentation
+- Supabase: authentication and canonical application data
+- Hostinger: current/target Next.js deployment runtime
+- Curatia Alpha baseline: [`docs/CURATIA-ALPHA-BASELINE.md`](../docs/CURATIA-ALPHA-BASELINE.md)
