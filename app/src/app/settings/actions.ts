@@ -3,12 +3,14 @@
 import { revalidatePath } from "next/cache";
 
 import { getSupabaseAdmin } from "@/lib/supabase";
-import { requireOnboardedSession } from "@/lib/session";
+import { authorizationFor, requireOnboardedSession } from "@/lib/session";
+import { assertWorkspaceWrite } from "@/lib/authorization";
 
 export async function saveSettings(formData: FormData) {
   const session = await requireOnboardedSession();
   const workspace = session.workspaces[0];
   if (!workspace) throw new Error("Workspace required.");
+  assertWorkspaceWrite(authorizationFor(session, workspace.id));
 
   const admin = getSupabaseAdmin();
   const displayName = String(formData.get("displayName") ?? "").trim();
