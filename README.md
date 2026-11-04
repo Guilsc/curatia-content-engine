@@ -20,9 +20,9 @@ Publishing, operational workers, database permissions, and hosted configuration 
 
 ## Architecture
 
-![Repository architecture](docs/assets/architecture.svg)
+![Editorial application, persistence, guidance, and human review](docs/assets/architecture.svg)
 
-[Editable HTML/SVG source](docs/architecture.html) · [Diagram style](docs/assets/architecture.style.json)
+The application, data store, reusable skills, and human approval boundary are separate responsibilities. The SVG is the editable source.
 
 
 Git contains portable source and contracts. Supabase holds live application data and workflow state. The hosting platform holds runtime settings; scheduled workers and publishing integrations are separately operated. Do not move canonical data into this repository.
