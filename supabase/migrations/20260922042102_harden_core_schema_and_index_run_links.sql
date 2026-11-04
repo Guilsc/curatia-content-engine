@@ -1,3 +1,17 @@
--- Production ledger reconciliation.
--- The repository's canonical core schema snapshot already includes the hardening/index state
--- represented by this historical migration. Kept as a ledger-aligned no-op for reproducible ordering.
+
+create or replace function public.set_updated_at()
+returns trigger
+language plpgsql
+set search_path = public, pg_temp
+as $$
+begin
+  new.updated_at = now();
+  return new;
+end;
+$$;
+
+create index if not exists signals_first_seen_run_id_idx
+  on public.signals (first_seen_run_id);
+
+create index if not exists signals_last_seen_run_id_idx
+  on public.signals (last_seen_run_id);
