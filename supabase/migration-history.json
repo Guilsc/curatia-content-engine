@@ -1,0 +1,367 @@
+{
+  "format": 1,
+  "source": "Applied Supabase migration statement records (read-only Management API export)",
+  "database_changes_performed": false,
+  "entries": [
+    {
+      "version": "20260922042044",
+      "name": "create_trend_scout_core_schema",
+      "path": "supabase/migrations/20260922042044_create_trend_scout_core_schema.sql",
+      "statement_sha256": "e407bf9dbcca9b020ff0de7752856a637b260bdd007e058ff24bbf56beb7da09",
+      "file_sha256": "e407bf9dbcca9b020ff0de7752856a637b260bdd007e058ff24bbf56beb7da09",
+      "terminal_newline_added": false
+    },
+    {
+      "version": "20260922042102",
+      "name": "harden_core_schema_and_index_run_links",
+      "path": "supabase/migrations/20260922042102_harden_core_schema_and_index_run_links.sql",
+      "statement_sha256": "f2cf48ff516249b92c934773c7aed374b4311b2d3f6244b3b33103873e1cce5e",
+      "file_sha256": "f2cf48ff516249b92c934773c7aed374b4311b2d3f6244b3b33103873e1cce5e",
+      "terminal_newline_added": false
+    },
+    {
+      "version": "20260926033249",
+      "name": "create_portfolio_publications",
+      "path": "supabase/migrations/20260926033249_create_portfolio_publications.sql",
+      "statement_sha256": "abce3ac7084f340d664f45c7b05ff7afd262b9ef3b8446d67e959208f7d6203f",
+      "file_sha256": "27ee14b07634930a54f360f796ab9826a6df5e6273e61d020c8119ca7e09cd2a",
+      "terminal_newline_added": true
+    },
+    {
+      "version": "20260926074454",
+      "name": "allow_public_read_portfolio_publications",
+      "path": "supabase/migrations/20260926074454_allow_public_read_portfolio_publications.sql",
+      "statement_sha256": "f457934b6ba33f0ac635c133f2f3ea08dca2fdd2763829946fb65cd6d40170ca",
+      "file_sha256": "87d97b740b3c8b75ca8aa23aece09636e41b5cfb97496742acf6fc771fdfaf23",
+      "terminal_newline_added": true
+    },
+    {
+      "version": "20260926075359",
+      "name": "grant_publication_select_to_api_roles",
+      "path": "supabase/migrations/20260926075359_grant_publication_select_to_api_roles.sql",
+      "statement_sha256": "c5e6320c77bec5358f356825384c27109af14e4d27a5e2c52ebd585dfa05a79f",
+      "file_sha256": "0cfd94b9c8014223e0f67ab771485459c325d0992e47f5c6c20cbd65f549d412",
+      "terminal_newline_added": true
+    },
+    {
+      "version": "20260926081153",
+      "name": "add_portfolio_publication_sync_audit",
+      "path": "supabase/migrations/20260926081153_add_portfolio_publication_sync_audit.sql",
+      "statement_sha256": "f9c9ff03758835b6cda13d73a48564bf319c7031ff5736250efe2642413bf83b",
+      "file_sha256": "72e01b5b8f92984ba315b357441f5d7a55d362e6983e0d20f8bf1e16fceb9fb0",
+      "terminal_newline_added": true
+    },
+    {
+      "version": "20260926081815",
+      "name": "add_portfolio_publication_lifecycle",
+      "path": "supabase/migrations/20260926081815_add_portfolio_publication_lifecycle.sql",
+      "statement_sha256": "fd9a2e8ed73361e3ab6cf5ec272cf525857e939d59188f940dc23d3c3d3f236c",
+      "file_sha256": "776d3c03f7ef01e51a3ff36b0a57c0b9b335e3e4cec9515e56e08d2135272d5e",
+      "terminal_newline_added": true
+    },
+    {
+      "version": "20260929073222",
+      "name": "curatia_foundation_tenancy",
+      "path": "supabase/migrations/20260929073222_curatia_foundation_tenancy.sql",
+      "statement_sha256": "34788e9d3b91cff03bdfa4acdb747a8f0c1b52058fa26f15c5503df21d8cde4a",
+      "file_sha256": "34788e9d3b91cff03bdfa4acdb747a8f0c1b52058fa26f15c5503df21d8cde4a",
+      "terminal_newline_added": false
+    },
+    {
+      "version": "20260929073226",
+      "name": "curatia_owner_bootstrap",
+      "path": "supabase/migrations/20260929073226_curatia_owner_bootstrap.sql",
+      "statement_sha256": "264df398fead94fdcbc77ed7c782b4be29fd0305f0ebfebc311414a667eea231",
+      "file_sha256": "264df398fead94fdcbc77ed7c782b4be29fd0305f0ebfebc311414a667eea231",
+      "terminal_newline_added": false
+    },
+    {
+      "version": "20260929073230",
+      "name": "curatia_onboarding_channels",
+      "path": "supabase/migrations/20260929073230_curatia_onboarding_channels.sql",
+      "statement_sha256": "a17cccfd4c21c098eb8079b7c7edda4cd31f1f7e90b64c0cf22b185e4b1e5c63",
+      "file_sha256": "a17cccfd4c21c098eb8079b7c7edda4cd31f1f7e90b64c0cf22b185e4b1e5c63",
+      "terminal_newline_added": false
+    },
+    {
+      "version": "20260929102026",
+      "name": "curatia_editorial_core",
+      "path": "supabase/migrations/20260929102026_curatia_editorial_core.sql",
+      "statement_sha256": "80940edbc6b66f6ad92ea3ca72571f8feaf4f25fb0466f127dd3fd380b2099ff",
+      "file_sha256": "80940edbc6b66f6ad92ea3ca72571f8feaf4f25fb0466f127dd3fd380b2099ff",
+      "terminal_newline_added": false
+    },
+    {
+      "version": "20260929102041",
+      "name": "curatia_claims_evidence",
+      "path": "supabase/migrations/20260929102041_curatia_claims_evidence.sql",
+      "statement_sha256": "f391a18fd3a3c3f0f2c37db667b67bd908b473393302ba287eaf9dfc147785ec",
+      "file_sha256": "f391a18fd3a3c3f0f2c37db667b67bd908b473393302ba287eaf9dfc147785ec",
+      "terminal_newline_added": false
+    },
+    {
+      "version": "20260929102442",
+      "name": "curatia_auth_bootstrap",
+      "path": "supabase/migrations/20260929102442_curatia_auth_bootstrap.sql",
+      "statement_sha256": "bc52b3d8afc988bc619b569547aa78874f1bdde01f6b1e75aa62e8dddf872de3",
+      "file_sha256": "bc52b3d8afc988bc619b569547aa78874f1bdde01f6b1e75aa62e8dddf872de3",
+      "terminal_newline_added": false
+    },
+    {
+      "version": "20260929102521",
+      "name": "curatia_workspace_rls",
+      "path": "supabase/migrations/20260929102521_curatia_workspace_rls.sql",
+      "statement_sha256": "cd49633aeab6c52ae1a62de470247616454fedbf575188f9dfe8c88e71755861",
+      "file_sha256": "cd49633aeab6c52ae1a62de470247616454fedbf575188f9dfe8c88e71755861",
+      "terminal_newline_added": false
+    },
+    {
+      "version": "20260929102535",
+      "name": "curatia_rls_complete",
+      "path": "supabase/migrations/20260929102535_curatia_rls_complete.sql",
+      "statement_sha256": "7e6f42435e4920a25baf82975ebcb9d69133eea313457b39dbfefd4cbc83bd70",
+      "file_sha256": "7e6f42435e4920a25baf82975ebcb9d69133eea313457b39dbfefd4cbc83bd70",
+      "terminal_newline_added": false
+    },
+    {
+      "version": "20260929114117",
+      "name": "fix_curatia_bootstrap_admin_role",
+      "path": "supabase/migrations/20260929114117_fix_curatia_bootstrap_admin_role.sql",
+      "statement_sha256": "b469fae983d8234d8617af93e28c8d93fd49480031aeb7f3890251713658d990",
+      "file_sha256": "cbefbdad8fefe23a312a60ace629a7132f371e24b240106012e6be84ba819786",
+      "terminal_newline_added": true
+    },
+    {
+      "version": "20260929134103",
+      "name": "repair_curatia_bootstrap_current_schema",
+      "path": "supabase/migrations/20260929134103_repair_curatia_bootstrap_current_schema.sql",
+      "statement_sha256": "233d132e86a80d7b566994054106bb6609089ab2379cadda7d16ca4960052e7f",
+      "file_sha256": "cfdf4af8ae4d265159e42d2959f04d294284c026fd7b2583d04ea51b4c1dcb26",
+      "terminal_newline_added": true
+    },
+    {
+      "version": "20260929134306",
+      "name": "fix_curatia_platform_owner_role",
+      "path": "supabase/migrations/20260929134306_fix_curatia_platform_owner_role.sql",
+      "statement_sha256": "00f7e09b5e1425f763877aadae8864b71f7cc79b2b8318ed2981a71cdb2be1ed",
+      "file_sha256": "403367eb692fb47dfc152438acbd9268263721c604ec36c5945c6818372424b0",
+      "terminal_newline_added": true
+    },
+    {
+      "version": "20260929134839",
+      "name": "curatia_onboarding_preferences",
+      "path": "supabase/migrations/20260929134839_curatia_onboarding_preferences.sql",
+      "statement_sha256": "86b86ddc627fb6a63a192e7b853a3e721aefad03e1b8b2788e8d54d4d3a09e8f",
+      "file_sha256": "ef54c9d4d950f0d099eff018197c37fa9e0886d872f80fee0dac33a2fbce340f",
+      "terminal_newline_added": true
+    },
+    {
+      "version": "20260929134958",
+      "name": "curatia_onboarding_channel_defaults",
+      "path": "supabase/migrations/20260929134958_curatia_onboarding_channel_defaults.sql",
+      "statement_sha256": "71032e46b28911994d1353e71eb96f2c8f1cb62e7260b9d0f275318726bc8418",
+      "file_sha256": "d5bea63b7342f500b17cc0a2af7a2c9fefbae0bcff7916d7411e96cbc0fc4695",
+      "terminal_newline_added": true
+    },
+    {
+      "version": "20260929135459",
+      "name": "curatia_onboarding_editorial_context",
+      "path": "supabase/migrations/20260929135459_curatia_onboarding_editorial_context.sql",
+      "statement_sha256": "5a58d6c2ec3db432ac66d27b94e7cb8847ec2ec9a3a00ccec4f5c8339776105f",
+      "file_sha256": "0d3caf9b7385bcb415bb9a140affc9e00766136074141b4dd8ba7b408118e338",
+      "terminal_newline_added": true
+    },
+    {
+      "version": "20260929135851",
+      "name": "curatia_connected_apps",
+      "path": "supabase/migrations/20260929135851_curatia_connected_apps.sql",
+      "statement_sha256": "a64c865e75445f2eb012765edc01095b19965614ceb0dc379ffad21693caaacd",
+      "file_sha256": "36336adcb27716542a85eadea74f1f23f6d053f6f5dc34269eb62136f1cf1a27",
+      "terminal_newline_added": true
+    },
+    {
+      "version": "20260929164743",
+      "name": "curatia_v1_preferences_channels_visual_assets",
+      "path": "supabase/migrations/20260929164743_curatia_v1_preferences_channels_visual_assets.sql",
+      "statement_sha256": "2d4ce5626021e9348f722257e734c6a42ce2f24bcc112bd14e1f07d1908f7520",
+      "file_sha256": "2d4ce5626021e9348f722257e734c6a42ce2f24bcc112bd14e1f07d1908f7520",
+      "terminal_newline_added": false
+    },
+    {
+      "version": "20260929174233",
+      "name": "curatia_v1_discovery_watchlists",
+      "path": "supabase/migrations/20260929174233_curatia_v1_discovery_watchlists.sql",
+      "statement_sha256": "f9e2761f67c798aed61410cba5be4d20c23f84350559b04e4c8b11c11f063495",
+      "file_sha256": "48e42393aa3881e7d3f92de253bfd0b15cdeba432cd5a0d79a5292766b894d4c",
+      "terminal_newline_added": true
+    },
+    {
+      "version": "20260929180353",
+      "name": "curatia_discovery_baseline_model",
+      "path": "supabase/migrations/20260929180353_curatia_discovery_baseline_model.sql",
+      "statement_sha256": "34895e0f42002797c6874bd68a3e65e9441b8002efb7730d55ee0de31dd1cd62",
+      "file_sha256": "34895e0f42002797c6874bd68a3e65e9441b8002efb7730d55ee0de31dd1cd62",
+      "terminal_newline_added": false
+    },
+    {
+      "version": "20260929185853",
+      "name": "curatia_v1_integration_catalog",
+      "path": "supabase/migrations/20260929185853_curatia_v1_integration_catalog.sql",
+      "statement_sha256": "bd9d733b0e98d74b21805a8dd4a1c2cdb9492be1371fdfa83992a17879d1dfa4",
+      "file_sha256": "bd9d733b0e98d74b21805a8dd4a1c2cdb9492be1371fdfa83992a17879d1dfa4",
+      "terminal_newline_added": false
+    },
+    {
+      "version": "20260929190119",
+      "name": "curatia_v1_admin_integration_catalog_controls",
+      "path": "supabase/migrations/20260929190119_curatia_v1_admin_integration_catalog_controls.sql",
+      "statement_sha256": "d263af64e158377ee23cf9777da6abd66253c3507c2c6595de407320824efd53",
+      "file_sha256": "d263af64e158377ee23cf9777da6abd66253c3507c2c6595de407320824efd53",
+      "terminal_newline_added": false
+    },
+    {
+      "version": "20260929200151",
+      "name": "curatia_signal_review_history",
+      "path": "supabase/migrations/20260929200151_curatia_signal_review_history.sql",
+      "statement_sha256": "d109f9e307e1ca61421b6a21aa89c853d1d50c1579e6d43ca23ff7adde4ed176",
+      "file_sha256": "d109f9e307e1ca61421b6a21aa89c853d1d50c1579e6d43ca23ff7adde4ed176",
+      "terminal_newline_added": false
+    },
+    {
+      "version": "20260929200433",
+      "name": "curatia_watch_loop_rpc",
+      "path": "supabase/migrations/20260929200433_curatia_watch_loop_rpc.sql",
+      "statement_sha256": "a35cae29c138387cc83c35370076cadea63ae4b39c0db33036fb2b6182bd6dc5",
+      "file_sha256": "a35cae29c138387cc83c35370076cadea63ae4b39c0db33036fb2b6182bd6dc5",
+      "terminal_newline_added": false
+    },
+    {
+      "version": "20260929201605",
+      "name": "curatia_signal_graph_and_radar_gate",
+      "path": "supabase/migrations/20260929201605_curatia_signal_graph_and_radar_gate.sql",
+      "statement_sha256": "45908442522aad0a9f25d2a821f0bf6cfc3edf7611237684214dff8b952aeed5",
+      "file_sha256": "45908442522aad0a9f25d2a821f0bf6cfc3edf7611237684214dff8b952aeed5",
+      "terminal_newline_added": false
+    },
+    {
+      "version": "20260929203413",
+      "name": "curatia_role_impact_generalization",
+      "path": "supabase/migrations/20260929203413_curatia_role_impact_generalization.sql",
+      "statement_sha256": "a65fc1545a99dd0001144d09ce72e52560ed0220c4679a8b19859ae2a66bd0ea",
+      "file_sha256": "a65fc1545a99dd0001144d09ce72e52560ed0220c4679a8b19859ae2a66bd0ea",
+      "terminal_newline_added": false
+    },
+    {
+      "version": "20260929210303",
+      "name": "curatia_scout_source_registry",
+      "path": "supabase/migrations/20260929210303_curatia_scout_source_registry.sql",
+      "statement_sha256": "9fabe31e1c00a33e8e78fb963405bcf75ff5695bfe3a9f93f7dfafbd9130755a",
+      "file_sha256": "9fabe31e1c00a33e8e78fb963405bcf75ff5695bfe3a9f93f7dfafbd9130755a",
+      "terminal_newline_added": false
+    },
+    {
+      "version": "20260929210456",
+      "name": "fix_curatia_watch_run_preferences_snapshot",
+      "path": "supabase/migrations/20260929210456_fix_curatia_watch_run_preferences_snapshot.sql",
+      "statement_sha256": "7a47d1e86b9be4d67fa0efd288671842c1e2354ad65a6c48b0d82f05a1887cea",
+      "file_sha256": "7a47d1e86b9be4d67fa0efd288671842c1e2354ad65a6c48b0d82f05a1887cea",
+      "terminal_newline_added": false
+    },
+    {
+      "version": "20260929214842",
+      "name": "simplify_curatia_content_lifecycle",
+      "path": "supabase/migrations/20260929214842_simplify_curatia_content_lifecycle.sql",
+      "statement_sha256": "bee2db112a74e2d5905fc8ac4657bb0d8ed6e7e2f7e38fbb48b4b2edbf7ff9fb",
+      "file_sha256": "bee2db112a74e2d5905fc8ac4657bb0d8ed6e7e2f7e38fbb48b4b2edbf7ff9fb",
+      "terminal_newline_added": false
+    },
+    {
+      "version": "20260929223618",
+      "name": "curatia_editorial_studio_assets",
+      "path": "supabase/migrations/20260929223618_curatia_editorial_studio_assets.sql",
+      "statement_sha256": "eec26c9bf57b722a81c1230cd726a9cba294b4420b74af1d88f03a5ae979f3f6",
+      "file_sha256": "cd9b3317573d25eacf673cf5ae0b4515b54a765bed0fc3b80da714a2261ce0e3",
+      "terminal_newline_added": true
+    },
+    {
+      "version": "20260929231405",
+      "name": "add_cloudflare_workers_ai_integration",
+      "path": "supabase/migrations/20260929231405_add_cloudflare_workers_ai_integration.sql",
+      "statement_sha256": "ce9a1235d72e6017ca75f907f344f22386d3ca6d7a81a6d59fad3b8dfe51784d",
+      "file_sha256": "478abe847127a26c7c6475aa03564f3bee5fe4f71e11e3fbdb70d5b0026527fa",
+      "terminal_newline_added": true
+    },
+    {
+      "version": "20260930004648",
+      "name": "curatia_content_artifact_engine_foundation",
+      "path": "supabase/migrations/20260930004648_curatia_content_artifact_engine_foundation.sql",
+      "statement_sha256": "eecf29a754f671207f85901729942ffb6b2bc2de9949e405a746f749eebe7d34",
+      "file_sha256": "eecf29a754f671207f85901729942ffb6b2bc2de9949e405a746f749eebe7d34",
+      "terminal_newline_added": false
+    },
+    {
+      "version": "20260930012911",
+      "name": "curatia_visual_reference_assets",
+      "path": "supabase/migrations/20260930012911_curatia_visual_reference_assets.sql",
+      "statement_sha256": "a2ebd6c2aeb80a1dc315030cac2406156305d8cb22c1514be30e6b4fb606f0c6",
+      "file_sha256": "a2ebd6c2aeb80a1dc315030cac2406156305d8cb22c1514be30e6b4fb606f0c6",
+      "terminal_newline_added": false
+    },
+    {
+      "version": "20260930021559",
+      "name": "curatia_visual_artifact_version_context",
+      "path": "supabase/migrations/20260930021559_curatia_visual_artifact_version_context.sql",
+      "statement_sha256": "eebd035f8a2fa8c17a45eb583bbb1f28438b92ccae0df28c441f624340635e65",
+      "file_sha256": "eebd035f8a2fa8c17a45eb583bbb1f28438b92ccae0df28c441f624340635e65",
+      "terminal_newline_added": false
+    },
+    {
+      "version": "20260930022310",
+      "name": "curatia_hide_infrastructure_from_workspace_integrations",
+      "path": "supabase/migrations/20260930022310_curatia_hide_infrastructure_from_workspace_integrations.sql",
+      "statement_sha256": "5618b173fe3617fea82f0da88af141db40acc8a342086192224bef44f0a75579",
+      "file_sha256": "5618b173fe3617fea82f0da88af141db40acc8a342086192224bef44f0a75579",
+      "terminal_newline_added": false
+    },
+    {
+      "version": "20260930023214",
+      "name": "curatia_separate_ai_providers_from_integrations",
+      "path": "supabase/migrations/20260930023214_curatia_separate_ai_providers_from_integrations.sql",
+      "statement_sha256": "9416d71a6a2af94b09f8ed53ff78f3782e54b714bba2b1eff66391f25ec06df9",
+      "file_sha256": "9416d71a6a2af94b09f8ed53ff78f3782e54b714bba2b1eff66391f25ec06df9",
+      "terminal_newline_added": false
+    },
+    {
+      "version": "20260930030450",
+      "name": "curatia_mcp_server_catalog",
+      "path": "supabase/migrations/20260930030450_curatia_mcp_server_catalog.sql",
+      "statement_sha256": "b0b13e64d2033a336c0773f06704f4ce4c219e0b039c72780596ed06b5f0621c",
+      "file_sha256": "0d7e1feb27ea38ad024b05c33ef97c315266cff0a053fe0984952e0eeb0f5487",
+      "terminal_newline_added": true
+    },
+    {
+      "version": "20260930031404",
+      "name": "curatia_omniroute_ai_provider",
+      "path": "supabase/migrations/20260930031404_curatia_omniroute_ai_provider.sql",
+      "statement_sha256": "1f1b38467ef22809dfcd2d651f1dcce9c43c019f135534e1884fa41719f48a88",
+      "file_sha256": "63276b2267383b3d2f8de5c91c066e3ec1edd19df73b7a2c393b6f06f79f2715",
+      "terminal_newline_added": true
+    },
+    {
+      "version": "20260930035517",
+      "name": "curatia_ai_capability_routing",
+      "path": "supabase/migrations/20260930035517_curatia_ai_capability_routing.sql",
+      "statement_sha256": "e33160e3980136da7f20d299c1984b2abda0b920e06cabb2b0e1e5b1aeb90b20",
+      "file_sha256": "e33160e3980136da7f20d299c1984b2abda0b920e06cabb2b0e1e5b1aeb90b20",
+      "terminal_newline_added": false
+    },
+    {
+      "version": "20260930040341",
+      "name": "curatia_remove_cloudflare_ai_provider",
+      "path": "supabase/migrations/20260930040341_curatia_remove_cloudflare_ai_provider.sql",
+      "statement_sha256": "41e6f2aa5bcc73f8bab2f0ae7ca98d62ad657312fec3a3c96e0566130fe89d43",
+      "file_sha256": "41e6f2aa5bcc73f8bab2f0ae7ca98d62ad657312fec3a3c96e0566130fe89d43",
+      "terminal_newline_added": false
+    }
+  ]
+}

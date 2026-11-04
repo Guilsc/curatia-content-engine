@@ -1,0 +1,1 @@
+alter table public.workspace_preferences add column if not exists primary_audience text, add column if not exists secondary_audiences text[] not null default '{}', add column if not exists audience_outcomes text[] not null default '{}', add column if not exists languages text[] not null default '{}';

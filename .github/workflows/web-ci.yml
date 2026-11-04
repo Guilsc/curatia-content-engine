@@ -8,10 +8,14 @@ on:
     branches: [main]
     paths:
       - "app/**"
+      - "supabase/**"
+      - "scripts/validate-migration-history*.mjs"
       - ".github/workflows/web-ci.yml"
   pull_request:
     paths:
       - "app/**"
+      - "supabase/**"
+      - "scripts/validate-migration-history*.mjs"
       - ".github/workflows/web-ci.yml"
 
 jobs:
@@ -29,6 +33,12 @@ jobs:
           node-version: 22
           cache: npm
           cache-dependency-path: app/package-lock.json
+
+      - name: Validate recorded migration history
+        working-directory: .
+        run: |
+          node scripts/validate-migration-history.mjs
+          node --test scripts/validate-migration-history.test.mjs
 
       - name: Install dependencies
         run: npm ci

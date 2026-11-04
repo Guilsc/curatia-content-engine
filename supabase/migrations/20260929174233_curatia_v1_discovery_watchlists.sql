@@ -1,0 +1,1 @@
+alter table public.workspace_preferences add column if not exists discovery_watchlists text[] not null default array['agentic_ai']::text[]; update public.workspace_preferences set discovery_watchlists=array['agentic_ai']::text[] where discovery_watchlists is null or cardinality(discovery_watchlists)=0;

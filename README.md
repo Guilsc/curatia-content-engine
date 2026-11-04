@@ -89,6 +89,11 @@ For current-state recovery, read:
 
 Keep the existing production URL stable. Renaming, domain changes, scheduler activation, migrations, and production deployment are separate release decisions.
 
+## Database migration history
+
+The active migration directory mirrors the versions already applied in Supabase. Historical SQL is hash-verified; obsolete planning drafts are archived outside the active migration path. See [migration-history guidance](supabase/README.md). This source reconciliation does not execute SQL or repair production migration records.
+
+
 ## Contributing, security, and releases
 
 Use scoped development branches and synthetic fixtures. Keep tests, recovery documentation, and migration history. Exclude `.next`, dependencies, incremental compiler caches, logs, and private environment files from Git.

@@ -1,9 +1,9 @@
+
 create extension if not exists pgcrypto;
 
 create or replace function public.set_updated_at()
 returns trigger
 language plpgsql
-set search_path = public, pg_temp
 as $$
 begin
   new.updated_at = now();
@@ -95,8 +95,6 @@ create index signals_state_idx on public.signals (state);
 create index signals_detected_at_idx on public.signals (detected_at desc);
 create index signals_archive_eligible_idx on public.signals (archive_eligible)
   where archive_eligible = true;
-create index signals_first_seen_run_id_idx on public.signals (first_seen_run_id);
-create index signals_last_seen_run_id_idx on public.signals (last_seen_run_id);
 
 create table public.signal_sources (
   signal_id uuid not null references public.signals(id) on delete cascade,
