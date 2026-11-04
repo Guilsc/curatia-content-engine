@@ -2,66 +2,97 @@
 
 **Signals. Context. Decisions. Creation.**
 
-Curatia is the evolution of BA Content Engine into a configurable editorial intelligence and content operations platform.
+Curatia is an editorial intelligence and content-operations platform. It connects source discovery, research, review, and content decisions while preserving workspace ownership and human approval boundaries.
 
-## Alpha direction
+**Application:** [curatia-content-engine.guilhermecosta.tech](https://curatia-content-engine.guilhermecosta.tech/) · **Stack:** Next.js 16, React 19, TypeScript, Supabase
 
-The current implementation is being evolved incrementally. Existing working behavior and canonical data must be preserved while Curatia adds workspace isolation, managed authentication/authorization, configurable discovery, a Content API boundary, operational observability, multi-channel creation, Visual Studio, publishing and performance learning.
+> **Status: incremental alpha.** The repository contains a portable web application, SQL migrations, editorial skills, and recovery documentation. Target-architecture documents are plans, not proof that every integration, publishing channel, or automation is implemented.
 
-The approved implementation baseline lives in:
+## What is implemented
 
-- `docs/CURATIA-ALPHA-BASELINE.md`
+- Next.js pages for login, onboarding, home, settings, and Trend Radar.
+- Server-side Supabase authentication/session helpers and workspace authorization predicates.
+- Signal retrieval and a publications API route.
+- Portable editorial instructions, skill packs, source-registry contracts, and automation specifications.
+- Versioned database migrations and documented operational recovery paths.
 
-Do not treat that target architecture as proof that every capability is already live.
+Publishing, operational workers, database permissions, and hosted configuration require their own verification. Passing a web build does not validate those external systems.
 
-## Current operating model
+## Architecture
 
-- **GitHub**: canonical portable source for product/Project instructions, Skills, editorial resources, architecture, automation specifications, database migrations, recovery documentation, and application code.
-- **Supabase**: canonical live application data and workflow state.
-- **Hostinger Web App**: current/target production runtime for the portable Next.js application as migration/cutover proceeds.
-- **ChatGPT Project**: editorial intelligence and development collaboration workspace.
-- **Scheduled workers**: existing background automation during the transition; Curatia Alpha moves toward replaceable scheduler -> job-dispatcher contracts.
-- **Hostinger DNS**: manages the custom domain.
+![Repository architecture](docs/assets/architecture.svg)
 
-## Current live URL
+[Editable HTML/SVG source](docs/architecture.html) · [Diagram style](docs/assets/architecture.style.json)
 
-Curatia production application:
 
-`https://curatia-content-engine.guilhermecosta.tech/`
+Git contains portable source and contracts. Supabase holds live application data and workflow state. The hosting platform holds runtime settings; scheduled workers and publishing integrations are separately operated. Do not move canonical data into this repository.
 
-Renaming/domain cutover is a separate release decision. Do not break the existing URL during foundation work.
+## Local development
 
-## Repository map
+Use Node.js 22 for parity with CI:
 
-- `project/` - portable Project instructions, Skills, resources, automation specs, Source Registry contracts.
-- `site/` - legacy/current Site deployment and recovery notes during migration.
-- `supabase/` - database migrations.
-- `docs/` - architecture, lifecycle, Curatia Alpha baseline, and current-state checkpoints.
-- `app/` - Next.js application being evolved toward the Curatia production runtime.
+```bash
+cd app
+npm ci
+npm run dev
+```
 
-## Migration principle
+Create `app/.env.local` using the **setting names** in the root `.env.example`, populated through your authorized development environment. Never copy production values into source control or chat. Authentication/data access requires a configured development Supabase project; static build checks can run without production credentials.
 
-Curatia is an incremental evolution, not a destructive rewrite.
+| Setting | Boundary |
+| --- | --- |
+| `NEXT_PUBLIC_SUPABASE_URL` | Public development project URL |
+| `NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY` | Browser-safe publishable key; never a service secret |
+| `SUPABASE_URL` | Server-side project endpoint |
+| `SUPABASE_SECRET_KEY` | Server-only secret; never exposed to browser code |
+| `CURATIA_BOOTSTRAP_OWNER_EMAIL` | Operator-controlled bootstrap identity |
 
-1. Preserve existing canonical Trend Radar data.
-2. Introduce workspace ownership and authorization safely.
-3. Migrate existing Guilherme data into Guilherme's workspace.
-4. Add domains in reviewed migrations.
-5. Keep approval and editorial governance intact.
-6. Validate each phase before production cutover.
+Do not disable authorization or substitute a service secret for a publishable key to make local login work. Apply migrations only to the intended development database after reviewing them.
 
-## Recovery
+## Verification
 
-For legacy/current-state recovery, start with:
+From `app/`:
 
-1. `project/PROJECT-BOOTSTRAP.md`
-2. `docs/CURRENT-STATE.md`
-3. `site/CURRENT-SITE-STATE.md`
+```bash
+npm run lint
+npm run typecheck
+npm audit --omit=dev --audit-level=high
+npm run build
+```
 
-For forward implementation, use `docs/CURATIA-ALPHA-BASELINE.md` as the approved target baseline.
+`typecheck` generates Next.js route types before invoking TypeScript. ESLint uses a flat configuration compatible with Next.js 16; `next lint` is not a supported command. CI installs the lockfile with `npm ci`, runs with read-only repository permissions, and does not deploy or write back changes.
 
-## Security
+A production build creates `app/.next/`; run it locally with `npm start`. Test authentication, membership isolation, role restrictions, database RLS, and publishing approval against a dedicated development environment before release. No complete end-to-end security or integration-test coverage is claimed.
 
-Never commit secrets.
+## Project structure
 
-Supabase secret/service keys, OAuth credentials/tokens, integration credentials, DNS verification tokens and production environment-variable values remain in secure platform settings. Curatia must not expose stored secrets in readable form.
+| Path | Responsibility |
+| --- | --- |
+| `app/src/app/` | App Router pages, server actions, publications endpoint |
+| `app/src/components/` | Application UI |
+| `app/src/lib/` | Authentication, authorization, sessions, signal/data boundaries |
+| `app/src/proxy.ts` | Request/session proxy |
+| `supabase/` | Reviewed database migrations |
+| `project/` | Portable Project instructions, skills, editorial resources and specs |
+| `docs/` | Architecture, lifecycle, current state and alpha baseline |
+| `site/` | Existing deployment and recovery notes during migration |
+
+## Product direction and recovery
+
+The approved target baseline is [CURATIA-ALPHA-BASELINE.md](docs/CURATIA-ALPHA-BASELINE.md). Work toward it incrementally: preserve canonical Trend Radar data, introduce workspace ownership safely, retain approval governance, and validate each phase before cutover.
+
+For current-state recovery, read:
+
+1. [Project bootstrap](project/PROJECT-BOOTSTRAP.md)
+2. [Current state](docs/CURRENT-STATE.md)
+3. [Site state](site/CURRENT-SITE-STATE.md)
+
+Keep the existing production URL stable. Renaming, domain changes, scheduler activation, migrations, and production deployment are separate release decisions.
+
+## Contributing, security, and releases
+
+Use scoped development branches and synthetic fixtures. Keep tests, recovery documentation, and migration history. Exclude `.next`, dependencies, incremental compiler caches, logs, and private environment files from Git.
+
+Never commit Supabase secrets, OAuth tokens, integration credentials, DNS verification values, or private source data. Report sensitive findings privately rather than in public issues.
+
+The application package is private; it is not a published npm library. A deployment is not automatically a GitHub Release. The source is licensed under the [MIT License](LICENSE). GitHub computes the Languages panel from tracked source; generated assets should not be used to exaggerate the implementation.
